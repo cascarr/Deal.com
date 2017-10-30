@@ -20,15 +20,27 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 
-Route::GET('admin/home', 'AdminController@index');
+Route::GET('/admin/home', 'AdminController@index');
 
 
-Route::GET('admin/qam', 'QamController@index');
+Route::GET('/admin/qam', 'QamController@index');
+
+Route::get('/admin/qam/add', 'QamController@create');
+
+Route::get('/admin/qam/{id}', 'QamController@destroy');
+
+Route::post('/admin/qam/store', 'QamController@store');
+
+Route::get('/admin/qam/edit/{id}', 'QamController@edit');
+
+Route::post('/admin/qam/update/{id}', 'QamController@updateCategory');
 
 
-Route::GET('admin/qac', 'QacController@index');
 
-Route::GET('admin/qam', 'QamController@index');
+
+Route::GET('/admin/qac', 'QacController@index');
+
+
 
 Route::GET('admin', 'Admin\LoginController@showLoginForm')->name('admin.login');
 
