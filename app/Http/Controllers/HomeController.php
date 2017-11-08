@@ -33,13 +33,13 @@ class HomeController extends Controller
 //        return view('home', compact('posts'));
 //    }
     
-    // function to display individual post
-    public function show($id)
-    {
-        $post = Post::find($id);
-        
-        return view('posts.show', compact('post'));
-    }
+//    // function to display individual post
+//    public function show($id)
+//    {
+//        $post = Post::find($id);
+//        
+//        return view('posts.show', compact('post'));
+//    }
 
 
 }
