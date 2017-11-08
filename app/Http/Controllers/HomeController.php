@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Post;
+
+//use App\Category;
+
+
 class HomeController extends Controller
 {
     /**
@@ -13,7 +18,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except(['index', 'show']);
     }
 
     /**
@@ -21,8 +26,20 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    
+//    public function index()
+//    {
+//        $posts = Post::latest()->paginate(2);
+//        return view('home', compact('posts'));
+//    }
+    
+    // function to display individual post
+    public function show($id)
     {
-        return view('home');
+        $post = Post::find($id);
+        
+        return view('posts.show', compact('post'));
     }
+
+
 }

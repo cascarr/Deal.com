@@ -25,6 +25,7 @@ class QamMiddleware
             }
         }
         
-        return redirect('/');
+        //return redirect('/admin');
+        return back();
     }
 }

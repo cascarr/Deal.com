@@ -66,9 +66,14 @@ class LoginController extends Controller
                 return redirect('admin/qac');
             }
             
+            elseif ($role->name == 'useri')
+            {
+                return redirect('admin/useri');
+            }
             
+
         }
-        
+                
     }
     
     

@@ -26,7 +26,8 @@ class QacMiddleware
             }
         }
         
-        return redirect('/');
+        //return redirect('/admin');
+        return back();
 
     }
 }
